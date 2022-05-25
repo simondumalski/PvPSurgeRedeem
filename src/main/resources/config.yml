@@ -1,0 +1,38 @@
+# Creator codes are determined by the value set in the config
+#
+# example-creator1:
+#    commands:
+#      - 'give %player% diamond 64'
+#      - 'give %player% cooked_beef 16'
+#
+# In this example, the creator code is 'example-creator1'
+#
+# Commands can be set by adding to the list of strings
+# Add each command without the slash (/)
+#
+# Use the placeholder %player% to have a command directed
+# to the player redeeming a reward
+#
+# Material names are case-sensitive
+# If a command is unknown, it will show in console as 'unknown command'
+creators:
+  example-creator1:
+    commands:
+      - 'give %player% diamond 64'
+      - 'give %player% cooked_beef 16'
+  example-creator2:
+    commands:
+      - 'kill %player%'
+
+messages:
+  prefix: '&8[&6Redeem&8]'
+  # You must have the placeholders %creator% and %uses% in their respective messages
+  # Removing them will result in unexpected behaviour
+  list: '&8- &6%creator%'
+  list-admin: '&8- &6%creator% &ehas been redeemed &6%uses% &6time(s)'
+  insufficient-permissions: '%prefix% &cInsufficient permissions!'
+  invalid-usage: '%prefix% &cInvalid usage!'
+  already-redeemed: '%prefix% &cYou have already redeemed a creator reward!'
+  invalid-creator: '%prefix% &cSpecified creator is invalid!'
+  redeemed: '%prefix% &aSuccessfully redeemed creator &e%args0%'
+  reload: '%prefix% &aReloaded config.yml!'

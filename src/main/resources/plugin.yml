@@ -1,0 +1,16 @@
+name: PvPSurgeRedeem
+version: '${project.version}'
+main: me.simondumalski.pvpsurgeredeem.Main
+authors: [ Saymoan ]
+prefix: 'Redeem'
+commands:
+  redeem:
+permissions:
+  redeem.base:
+    description: Gives access to redeeming creators and /list
+    default: op
+    children:
+      redeem.admin: true
+  redeem.admin:
+    description: Gives access to /reload and /list with usage numbers
+    default: op
